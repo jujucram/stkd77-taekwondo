@@ -261,10 +261,49 @@ vertical-align: middle;
 .schedule-card{background:white;color:black;padding:30px;border-radius:10px;transition:0.4s;cursor:pointer;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
 .schedule-card:hover,.schedule-card:active{transform:translateY(-10px);box-shadow:0 0 30px rgba(230,0,35,0.6),0 15px 25px rgba(0,0,0,0.15);background:linear-gradient(135deg,rgba(230,0,35,0.1),rgba(255,255,255,1));}
 
-/* Gallery */
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-.gallery img{width:100%;border-radius:10px;cursor:pointer;transition:0.3s;}
-.gallery img:hover{transform:scale(1.05);}
+/* Le conteneur qui force la colonne unique et centrée */
+.galerie-fixed-column {
+    max-width: 500px; /* Limite la largeur sur PC */
+    width: 92%;       /* Laisse environ 4% de marge de chaque côté sur mobile */
+    margin: 0 auto;   /* Centre la colonne sur l'écran (PC et Mobile) */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;        /* Espace entre les blocs d'images */
+}
+
+/* Chaque bloc (Titre + Image + Texte) */
+.galerie-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.galerie-item img {
+    width: 100%;       /* L'image prend 100% du conteneur (qui lui fait 92% du tel) */
+    height: auto;
+    border-radius: 15px;
+    margin: 15px 0;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* L'effet de bordure au survol */
+.galerie-item img:hover {
+    transform: translateY(-5px);
+    border-color: #e60023; /* Ta bordure rouge club */
+    box-shadow: 0 10px 25px rgba(230,0,35,0.4);
+}
+
+/* Ajustement pour les très petits mobiles */
+@media (max-width: 400px) {
+    .galerie-fixed-column {
+        width: 88%; /* Marge un peu plus grande sur les tout petits écrans */
+    }
+}
 
 /* CTA */
 .cta{background:#e60023;color:white;text-align:center;padding:80px;}
