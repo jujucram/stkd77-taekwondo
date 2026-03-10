@@ -158,8 +158,10 @@ vertical-align: middle;
 
 /* (Président) */
 .main-leader {
-    max-width: 350px;
-    margin: 0 auto 50px;
+    max-width: 320px;
+    width: 90%;
+    margin: 0 auto 30px auto;
+    box-sizing: border-box;
 }
 
 .team-card {
