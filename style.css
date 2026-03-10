@@ -40,7 +40,7 @@ nav a.nav-location:hover{background:#c40020;box-shadow:0 5px 15px rgba(230,0,35,
   nav a.nav-location{background:#e60023;color:white;padding:10px 15px;border-radius:20px;margin-left:0;margin-top:10px;text-align:center;display:block;border-left:0;}
   
   /* Masquer la nav classique et la transformer en menu vertical */
-  nav{display:none;flex-direction:column;position:fixed;top:60px;right:0;width:280px;height:calc(100vh-60px);background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);padding:30px 20px;z-index:999;overflow-y:auto;border-left:2px solid #e60023;box-shadow:-5px 0 20px rgba(0,0,0,0.3);}
+  nav{display:none;flex-direction:column;position:fixed;top:60px;right:0;width:100%;height:calc(100vh-60px);background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);padding:30px 20px;z-index:999;overflow-y:auto;border-left:2px solid #e60023;box-shadow:-5px 0 20px rgba(0,0,0,0.3);}
   .menu-close{display:none;font-size:24px;text-align:right;margin-bottom:20px;cursor:pointer;color:#e60023;padding:5px;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;}
   .menu-close:hover{background:#e60023;color:white;}
   nav a{margin:15px 0;padding:12px;border-left:3px solid transparent;color:#333;display:block;font-weight:500;}
