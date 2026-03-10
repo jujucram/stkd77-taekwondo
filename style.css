@@ -26,8 +26,8 @@ nav a.nav-location:hover{background:#c40020;box-shadow:0 5px 15px rgba(230,0,35,
 /* Media query mobile/tablette */
 @media(max-width:900px){
   header {
-    padding: 10px 15px; /* Moins de padding pour laisser de la place */
-    box-sizing: border-box; /* Force le padding à rester à l'intérieur des 100% */
+    padding: 10px 15px; 
+    box-sizing: border-box; 
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -36,9 +36,9 @@ nav a.nav-location:hover{background:#c40020;box-shadow:0 5px 15px rgba(230,0,35,
 
   .logo {
     font-size: 16px;
-    white-space: nowrap; /* Empêche le nom du club de s'étaler */
+    white-space: nowrap; 
     overflow: hidden;
-    text-overflow: ellipsis; /* Coupe proprement si le nom est trop long */
+    text-overflow: ellipsis; 
     max-width: 60%; 
   }
 
@@ -47,22 +47,21 @@ nav a.nav-location:hover{background:#c40020;box-shadow:0 5px 15px rgba(230,0,35,
     margin-right: 8px;
   }
   
-  /* Correction du bouton burger */
   .menu-toggle {
     display: block;
     z-index: 1001;
-    flex-shrink: 0; /* Empêche l'icône de se faire écraser */
+    flex-shrink: 0; 
     margin-right: 0; 
   }
   
-  /* Menu mobile (le panneau qui glisse) */
+  /* Menu mobile */
   nav {
     display: none;
     flex-direction: column;
     position: fixed;
     top: 0;
     right: 0;
-    width: 80%; /* Un peu d'espace à gauche pour le style */
+    width: 80%; 
     height: 100vh;
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
@@ -157,7 +156,7 @@ vertical-align: middle;
     padding: 0 20px;
 }
 
-/* La carte principale (Président) */
+/* (Président) */
 .main-leader {
     max-width: 350px;
     margin: 0 auto 50px;
