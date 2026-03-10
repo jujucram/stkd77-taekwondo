@@ -25,31 +25,101 @@ nav a.nav-location:hover{background:#c40020;box-shadow:0 5px 15px rgba(230,0,35,
 
 /* Media query mobile/tablette */
 @media(max-width:900px){
-  header{padding:15px 20px;}
-  .logo{font-size:18px;}
-  .logo-img{height:40px;}
+  header {
+    padding: 10px 15px; /* Moins de padding pour laisser de la place */
+    box-sizing: border-box; /* Force le padding à rester à l'intérieur des 100% */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 16px;
+    white-space: nowrap; /* Empêche le nom du club de s'étaler */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Coupe proprement si le nom est trop long */
+    max-width: 60%; 
+  }
+
+  .logo-img {
+    height: 35px;
+    margin-right: 8px;
+  }
   
-  /* Afficher le burger */
-  .menu-toggle{display:block;z-index:1001;}
-  .menu-toggle:hover{color:#e60023;text-shadow:0 0 10px rgba(230,0,35,0.5);}
+  /* Correction du bouton burger */
+  .menu-toggle {
+    display: block;
+    z-index: 1001;
+    flex-shrink: 0; /* Empêche l'icône de se faire écraser */
+    margin-right: 0; 
+  }
   
-  /* Afficher le bouton de fermeture dans le menu */
-  .menu-close{display:flex !important;}
-  
-  /* Style du lien localisation en mobile */
-  nav a.nav-location{background:#e60023;color:white;padding:10px 15px;border-radius:20px;margin-left:0;margin-top:10px;text-align:center;display:block;border-left:0;}
-  
-  /* Masquer la nav classique et la transformer en menu vertical */
-  nav{display:none;flex-direction:column;position:fixed;top:60px;left:0;width:100%;height:calc(100vh - 60px);background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);padding:30px 20px;z-index:999;overflow-y:auto;border-left:2px solid #e60023;box-shadow:-5px 0 20px rgba(0,0,0,0.3);}
-  .menu-close{display:none;font-size:24px;text-align:right;margin-bottom:20px;cursor:pointer;color:#e60023;padding:5px;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;}
-  .menu-close:hover{background:#e60023;color:white;}
-  nav a{margin:15px 0;padding:12px;border-left:3px solid transparent;color:#333;display:block;font-weight:500;}
-  nav a:hover{border-left-color:#e60023;color:#e60023;background:rgba(230,0,35,0.1);text-shadow:0 0 10px rgba(230,0,35,0.8);}
-  
-  /* Afficher le menu quand active */
-  nav.active{display:flex;}
-  
-  @keyframes slideInRight{from{transform:translateX(100%);opacity:0;}to{transform:translateX(0);opacity:1;}}
+  /* Menu mobile (le panneau qui glisse) */
+  nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%; /* Un peu d'espace à gauche pour le style */
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 80px 20px 30px 20px;
+    z-index: 999;
+    overflow-y: auto;
+    border-left: 2px solid #e60023;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+  }
+
+  nav.active {
+    display: flex;
+    animation: slideInRight 0.3s ease-out;
+  }
+
+  .menu-close {
+    display: flex !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #e60023;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .menu-close:hover {
+    background: #e60023;
+    color: white;
+  }
+
+  nav a {
+    margin: 10px 0;
+    padding: 15px;
+    color: #333;
+    display: block;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+  }
+
+  nav a.nav-location {
+    margin-top: 20px;
+    text-align: center;
+    background: #e60023;
+    color: white;
+    border-radius: 25px;
+  }
+
+  @keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
 }
 
 .logo-img {
