@@ -135,10 +135,54 @@ vertical-align: middle;
 .hero h1{font-size:60px;}
 .btn{padding:15px 40px;background:#e60023;color:white;display:inline-block;margin-top:20px;}
 
-/* Stats */
-.stats{display:flex;justify-content:space-around;padding:80px;background:white;}
-.stat{text-align:center;}
-.stat i{font-size:40px;color:#e60023;}
+/* --- Section Stats Optimisée --- */
+
+.stats {
+    display: flex;
+    flex-direction: column; /* Par défaut sur mobile : l'un sous l'autre */
+    align-items: center;
+    gap: 40px;              /* Espace automatique entre les blocs */
+    padding: 50px 20px;     /* Espace intérieur (haut/bas et côtés) */
+    background: white;
+}
+
+.stat {
+    text-align: center;
+    width: 100%;            /* Prend toute la largeur sur mobile pour bien centrer */
+}
+
+.stat i {
+    font-size: 40px;
+    color: #e60023;
+    margin-bottom: 15px;    /* Espace entre l'icône et le chiffre */
+    display: block;
+}
+
+.stat h2 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.stat p {
+    margin: 5px 0 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* --- Passage au mode Ordinateur --- */
+@media (min-width: 768px) {
+    .stats {
+        flex-direction: row;        /* Aligne horizontalement sur PC */
+        justify-content: space-around;
+        padding: 80px;              /* Reprend ton padding d'origine */
+    }
+    
+    .stat {
+        width: auto;                /* Laisse les blocs prendre leur place naturelle */
+    }
+}
+
 
 /* Sections */
 .section{padding:80px 10%;text-align:center;}
