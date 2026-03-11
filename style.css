@@ -469,6 +469,26 @@ vertical-align: middle;
     border-color: #e60023; /* Ta bordure rouge club */
     box-shadow: 0 10px 25px rgba(230,0,35,0.4);
 }
+.instagram-btn {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white !important;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.instagram-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    color: white;
+}
+
 
 /* Ajustement pour les très petits mobiles */
 @media (max-width: 400px) {
