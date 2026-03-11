@@ -433,29 +433,31 @@ vertical-align: middle;
 }
 
 
-/* Le conteneur qui force la colonne unique et centrée */
+/* --- CONTENEUR GALERIE --- */
 .galerie-fixed-column {
-    max-width: 500px; /* Limite la largeur sur PC */
-    width: 92%;       /* Laisse environ 4% de marge de chaque côté sur mobile */
-    margin: 0 auto;   /* Centre la colonne sur l'écran (PC et Mobile) */
+    max-width: 500px;
+    width: 92%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 40px;        /* Espace entre les blocs d'images */
+    gap: 45px; /* Plus d'espace pour la respiration */
 }
 
-/* Chaque bloc (Titre + Image + Texte) */
 .galerie-item {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    background: rgba(255, 255, 255, 0.03); /* Léger fond pour détacher le bloc */
+    padding-bottom: 20px;
+    border-radius: 15px;
 }
 
 .galerie-item img {
-    width: 100%;       /* L'image prend 100% du conteneur (qui lui fait 92% du tel) */
+    width: 100%;
     height: auto;
-    border-radius: 15px;
+    border-radius: 12px;
     margin: 15px 0;
     cursor: pointer;
     border: 3px solid transparent;
@@ -463,39 +465,88 @@ vertical-align: middle;
     box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
-/* L'effet de bordure au survol */
 .galerie-item img:hover {
     transform: translateY(-5px);
-    border-color: #e60023; /* Ta bordure rouge club */
+    border-color: #e60023;
     box-shadow: 0 10px 25px rgba(230,0,35,0.4);
 }
+
+/* --- TEXTES ET ICONES --- */
+.event-header {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.event-header i {
+    color: #e60023; /* Couleur rouge du club */
+    margin-right: 8px;
+}
+
+.description p {
+    margin: 5px 0;
+    color: #ccc;
+}
+
+.names {
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.gold { color: #ffd700; }
+.silver { color: #c0c0c0; }
+
+/* --- BOUTON INSTAGRAM (FIXÉ) --- */
+.cta-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+}
+
 .instagram-btn {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     color: white !important;
-    border: none;
-    padding: 12px 25px;
+    padding: 15px 25px;
     border-radius: 50px;
-    font-weight: bold;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-decoration: none;
+    
+    /* Sécurité Responsive */
+    max-width: 100%;
+    width: fit-content;
+    box-sizing: border-box;
 }
 
 .instagram-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    color: white;
+    transform: scale(1.08);
+    box-shadow: 0 15px 30px rgba(220, 39, 67, 0.4);
+    filter: brightness(1.1);
 }
 
-
-/* Ajustement pour les très petits mobiles */
-@media (max-width: 400px) {
+/* Ajustements Responsive */
+@media (max-width: 480px) {
     .galerie-fixed-column {
-        width: 88%; /* Marge un peu plus grande sur les tout petits écrans */
+        width: 95%;
+    }
+    .instagram-btn {
+        width: 100%; /* Prend toute la place sur mobile pour faciliter le clic */
+        font-size: 0.75rem;
+        padding: 14px 10px;
+    }
+    .event-header {
+        font-size: 1.1rem;
     }
 }
+
 
 /* CTA */
 .btn-flottant {
