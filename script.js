@@ -68,17 +68,47 @@ navLinks.forEach(link => {
 })
 
 // Effet flottant et lumineux pour les horaires de cours
-const scheduleCards = document.querySelectorAll(".schedule-card")
-scheduleCards.forEach(card => {
-  card.addEventListener("touchstart", () => {
-    card.style.transition = "0.4s"
-    card.style.transform = "translateY(-10px)"
-    card.style.boxShadow = "0 0 30px rgba(230,0,35,0.6),0 15px 25px rgba(0,0,0,0.15)"
-    card.style.background = "linear-gradient(135deg,rgba(230,0,35,0.1),rgba(255,255,255,1))"
-  })
-  card.addEventListener("touchend", () => {
-    card.style.transform = "translateY(0)"
-    card.style.boxShadow = "0 5px 15px rgba(0,0,0,0.1)"
-    card.style.background = "white"
-  })
-})
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.schedule-card');
+
+    // 1. Logique de Filtrage
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Gestion du bouton actif
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            cards.forEach(card => {
+                // On vérifie si la carte correspond au filtre
+                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                    card.style.display = "block"; // On affiche
+                    setTimeout(() => { card.style.opacity = "1"; }, 10);
+                } else {
+                    card.style.opacity = "0"; // Transition douce
+                    setTimeout(() => { card.style.display = "none"; }, 300);
+                }
+            });
+        });
+    });
+
+    // 2. Effet Flottant et Lumineux (Optimisé pour le tactile)
+    cards.forEach(card => {
+        // Au toucher (Mobile/Tablette)
+        card.addEventListener("touchstart", () => {
+            card.style.transition = "0.4s ease";
+            card.style.transform = "translateY(-10px)";
+            card.style.boxShadow = "0 0 30px rgba(230,0,35,0.6), 0 15px 25px rgba(0,0,0,0.15)";
+            card.style.background = "linear-gradient(135deg, rgba(230,0,35,0.1), rgba(255,255,255,1))";
+        });
+
+        // Quand on relâche le doigt
+        card.addEventListener("touchend", () => {
+            card.style.transform = "translateY(0)";
+            card.style.boxShadow = "0 5px 15px rgba(0,0,0,0.1)";
+            card.style.background = "white";
+        });
+    });
+});
