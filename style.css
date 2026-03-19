@@ -186,7 +186,7 @@ vertical-align: middle;
 
 
 /* Sections */
-.section{padding:80px 10%;text-align:center;}
+.section{padding:80px 20px;text-align:center;}
 .cards{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;}
 .card{background:white;padding:30px;width:260px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.1);}
 .card i{font-size:35px;color:#e60023;}
