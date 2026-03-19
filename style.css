@@ -135,8 +135,6 @@ vertical-align: middle;
 .hero h1{font-size:60px;}
 .btn{padding:15px 40px;background:#e60023;color:white;display:inline-block;margin-top:20px;}
 
-/* --- Section Stats Optimisée --- */
-
 .stats {
     display: flex;
     flex-direction: column; /* Par défaut sur mobile : l'un sous l'autre */
