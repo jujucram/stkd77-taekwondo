@@ -451,17 +451,13 @@ Athl&egrave;tes haut-niveau </p>
 AOS.init();
 </script>
     <script>
-function toggleContent(element) {
-  const card = element.parentElement;
-
-  // Ferme tous les autres
+function toggleContent(card) {
   document.querySelectorAll(".card-toggle").forEach(item => {
     if (item !== card) {
       item.classList.remove("active");
     }
   });
 
-  // Toggle celui cliqué
   card.classList.toggle("active");
 }
     </script>
