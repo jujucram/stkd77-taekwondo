@@ -83,23 +83,55 @@ Athl&egrave;tes haut-niveau </p>
 <section id="club" class="section">
 <h2 data-aos="fade-up">Notre Club</h2>
 <div class="cards">
-    <p style="text-align: center;">Le club de Taekwondo de Savigny-le-Temple a été créé en septembre 2008 par Rachid Aït Moulay 6ème Dan. Instructeur depuis plus de 15 ans et Coach de sportifs de haut niveau.   HALL DES SPOSRTS  LEO LAGRANGE  SAIGNY-Le-TEMPLE
+  <!-- QUI SOMMES-NOUS -->
+    <div class="card card-toggle" data-aos="zoom-in" onclick="toggleContent(this)">
+      <i class="fas fa-users"></i>
+      <h3>Qui sommes-nous ?</h3>
 
-BABY TAEKWONDO à partir de 3ans - BODY TAEKWONDO - COURS LOISIRS - COURS COMBATS - SECTION ELITES ET HAUT-NIVEAU
+      <div class="hidden-content">
+        <p style="text-align: center;">
+          Le club de Taekwondo de Savigny-le-Temple a été créé en septembre 2008 par Rachid Aït Moulay 6ème Dan. Instructeur depuis plus de 15 ans et Coach de sportifs de haut niveau.
+          <br><br>
+          HALL DES SPORTS LEO LAGRANGE SAVIGNY-LE-TEMPLE
+          <br><br>
+          BABY TAEKWONDO à partir de 3 ans - BODY TAEKWONDO - COURS LOISIRS - COURS COMBATS - SECTION ELITES ET HAUT-NIVEAU
+          <br><br>
+          Neuf fois détenteur du titre de Champion de Seine-et-Marne, le club a eu plusieurs champions régionaux, nationaux et plusieurs médaillés internationaux dans son effectif.
+          <br><br>
+          Plusieurs de ses athlètes ont participé à des championnats d'Europe et l'un d'eux a participé aux Championnats du monde Juniors.
+          <br><br>
+          Plusieurs de ses athlètes ont déjà été sélectionnés à divers regroupements avec l'équipe de France, ou l'équipe régionale. Et plusieurs ont été intégrés dans des structures nationales d'athlètes Haut-Niveau - Centre fédéral, INSEP, CREPS.
+          <br><br>
+          Le club est labellisé par la FFTDA et a dépassé les 1500 licencié-e-s depuis sa création.
+          <br><br>
+          <strong>Adresse</strong><br>
+          Les cours se déroulent au gymnase Halle des sports Léo Lagrange, 26 rue Elsa Triolet, 77176 Savigny-le-Temple
+          (à proximité de la caserne des pompiers de Savigny-le-Temple longeant la voie ferrée).
+          <br><br>
+          <strong>Horaires</strong><br>
+          Cours Loisirs techniques les mardis et vendredis (entre 18h et 21h30 selon les catégories d'âge).<br>
+          Cours préparation physique et compétitions les lundis et jeudis entre 19h et 21h30, et dimanches (section Élites).
+        </p>
+      </div>
+    </div>
 
-Neuf fois détenteur du titre de Champion de Seine-et-Marne, le club a eu plusieurs champions régionaux, nationaux et plusieurs médaillés internationaux dans son effectif. 
+    <!-- PALMARÈS -->
+    <div class="card card-toggle" data-aos="zoom-in" onclick="toggleContent(this)">
+      <i class="fas fa-trophy"></i>
+      <h3>Palmarès</h3>
 
-Plusieurs de ses athlètes ont participé à des championnats d'Europe et l'un d'eux a participé aux Championnats du monde Juniors.
+      <div class="hidden-content">
+        <p style="text-align: center; margin-bottom: 20px;">
+          Ajoute ici tes images et ton contenu personnalisé.
+        </p>
 
-Plusieurs de ses athlètes ont déjà été sélectionnés à divers regroupement avec l'équipe de France, ou l'équipe régionale. Et plusieurs ont été intégré des structures nationales d'athlètes Haut-Niveau - Centre fédéral, INSEP, CREPS.
-
-Le club est labellisé par la FFTDA et a dépassé les 1500 licencié-e-s depuis sa création.
-
-Adresse
-Les cours se déroulent  au gymnase Halle des sports Léo Lagrange 26, rue Elsa Triolet 77176 Savigny-le-Temple (à proximité de la caserne des pompiers de Savigny-le-Temple longeant la voie ferrée)
-Horaires
-Cours Loisirs techniques les Mardis  et Vendredis (entre 18 et 21h30 selon les catégories d'âge)
-Cours préparation physique et compétitions les lundis et jeudis entre 19h et 21h30  et dimanches (section Elites)</p>
+        <div class="palmares-gallery">
+          <img src="images/palmares1.jpg" alt="Palmarès 1">
+          <img src="images/palmares2.jpg" alt="Palmarès 2">
+          <img src="images/palmares3.jpg" alt="Palmarès 3">
+        </div>
+      </div>
+    </div>
     <div class="card" data-aos="zoom-in">
     <i class="fas fa-user-graduate"></i>
     <h3>Formation</h3>
@@ -422,5 +454,10 @@ Cours préparation physique et compétitions les lundis et jeudis entre 19h et 2
 <script>
 AOS.init();
 </script>
+    <script>
+  function toggleContent(card) {
+    card.classList.toggle("active");
+  }
+    </script>
 </body>
 </html>
