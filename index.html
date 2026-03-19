@@ -455,9 +455,19 @@ Athl&egrave;tes haut-niveau </p>
 AOS.init();
 </script>
     <script>
-  function toggleContent(card) {
-    card.classList.toggle("active");
-  }
+function toggleContent(element) {
+  const card = element.parentElement;
+
+  // Ferme tous les autres
+  document.querySelectorAll(".card-toggle").forEach(item => {
+    if (item !== card) {
+      item.classList.remove("active");
+    }
+  });
+
+  // Toggle celui cliqué
+  card.classList.toggle("active");
+}
     </script>
 </body>
 </html>
