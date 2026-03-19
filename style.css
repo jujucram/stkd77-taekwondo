@@ -181,6 +181,39 @@ vertical-align: middle;
         width: auto;                /* Laisse les blocs prendre leur place naturelle */
     }
 }
+.card-toggle {
+  cursor: pointer;
+}
+
+.hidden-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, margin-top 0.3s ease;
+  margin-top: 0;
+}
+
+.card-toggle.active .hidden-content {
+  max-height: 2000px;
+  margin-top: 20px;
+}
+
+.hidden-content p {
+  line-height: 1.8;
+}
+
+.palmares-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.palmares-gallery img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 12px;
+  object-fit: cover;
+}
 
 
 /* Sections */
