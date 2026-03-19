@@ -4,35 +4,37 @@ window.addEventListener("scroll", () => {
 header.classList.toggle("scrolled", window.scrollY > 50)
 })
 
-// Counters animés au scroll
-const counters = document.querySelectorAll(".counter")
-const options = { threshold: 0.5 }
+const counters = document.querySelectorAll(".counter");
+const options = { threshold: 0.5 };
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const counter = entry.target
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const counter = entry.target;
+            const target = +counter.getAttribute("data-target");
+            
+            const update = () => {
+                // On récupère uniquement les chiffres actuels
+                const count = parseInt(counter.innerText.replace('+', '')) || 0;
+                const speed = target / 100; 
 
-      const update = () => {
-        const target = +counter.getAttribute("data-target")
-        const count = +counter.innerText
-        const speed = target / 200
-
-        if (count < target) {
-          counter.innerText = Math.ceil(count + speed)
-          setTimeout(update, 20)
-        } else {
-          counter.innerText = target
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + speed);
+                    setTimeout(update, 20);
+                } else {
+                    // On met le chiffre final avec UN SEUL "+"
+                    counter.innerText = target + "+"; 
+                }
+            };
+            update();
+            observer.unobserve(counter); // Empêche de relancer l'animation
         }
-      }
+    });
+}, options);
 
-      update()
-      observer.unobserve(counter)
-    }
-  })
-}, options)
+counters.forEach(counter => observer.observe(counter));
 
-counters.forEach(counter => observer.observe(counter))
+// Ton code pour le menu mobile reste identique ici...
 
 
 // Menu mobile
