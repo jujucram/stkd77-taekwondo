@@ -798,6 +798,61 @@ footer h3 {
   opacity: 0.8;
 }
 
+#btnTop {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  bottom: 30px;
+  left: 30px; /* À gauche pour laisser la place à l'inscription */
+  z-index: 99;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: #d32f2f; /* Rouge Taekwondo (ou ton bleu) */
+  color: white;
+  cursor: pointer;
+  border-radius: 50%; /* On le met bien rond, c'est plus moderne */
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.4);
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dessin de la flèche épaisse */
+.arrow-icon {
+  position: relative;
+  width: 4px;      /* Épaisseur du corps de la flèche */
+  height: 20px;    /* Longueur de la flèche */
+  background-color: white;
+  border-radius: 2px;
+}
+
+.arrow-icon::after {
+  content: '';
+  position: absolute;
+  top: -2px;       /* Ajustement pour la pointe */
+  left: -6px;      /* Centre la pointe par rapport au corps */
+  width: 12px;     /* Largeur de la pointe */
+  height: 12px;    /* Hauteur de la pointe */
+  border-top: 4px solid white;  /* Épaisseur de la pointe */
+  border-left: 4px solid white; /* Épaisseur de la pointe */
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+
+/* Effet au survol */
+#btnTop:hover {
+  background-color: #222;
+  transform: translateY(-8px); /* Elle saute vers le haut quand on la survole */
+}
+
+/* Classe pour l'apparition en fondu */
+#btnTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* --- AJUSTEMENTS MOBILE --- */
 @media (max-width: 768px) {
   .footer-content {
