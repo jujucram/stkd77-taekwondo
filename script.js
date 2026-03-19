@@ -132,3 +132,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+let mybutton = document.getElementById("btnTop");
+
+// Détection du scroll
+window.onscroll = function() {
+  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+    mybutton.classList.add("show");
+  } else {
+    mybutton.classList.remove("show");
+  }
+};
+
+// Remontée fluide
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
