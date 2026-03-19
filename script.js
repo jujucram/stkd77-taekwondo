@@ -9,30 +9,31 @@ const counters = document.querySelectorAll(".counter")
 const options = { threshold: 0.5 }
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const counter = entry.target
-            const target = +counter.getAttribute("data-target")
-            
-            const update = () => {
-                const count = parseInt(counter.innerText) // On utilise parseInt pour ignorer le "+" s'il existe déjà
-                const speed = target / 100 // J'ai un peu augmenté la vitesse pour 1500
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const counter = entry.target
 
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + speed)
-                    setTimeout(update, 20)
-                } else {
-                    // C'EST ICI : On ajoute le "+" quand c'est fini
-                    counter.innerText = target + "+" 
-                }
-            }
-            update()
-            observer.unobserve(counter)
+      const update = () => {
+        const target = +counter.getAttribute("data-target")
+        const count = +counter.innerText
+        const speed = target / 200
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + speed)
+          setTimeout(update, 20)
+        } else {
+          counter.innerText = target
         }
-    })
+      }
+
+      update()
+      observer.unobserve(counter)
+    }
+  })
 }, options)
 
 counters.forEach(counter => observer.observe(counter))
+
 
 // Menu mobile
 const menu = document.querySelector(".menu-toggle")
