@@ -133,22 +133,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-let mybutton = document.getElementById("btnTop");
+const btn = document.getElementById("backToTop");
 
-// Détection du scroll
+// Détecte le défilement
 window.onscroll = function() {
-  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-    mybutton.classList.add("show");
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    btn.style.display = "block";
   } else {
-    mybutton.classList.remove("show");
+    btn.style.display = "none";
   }
 };
 
-// Remontée fluide
-function scrollToTop() {
+// Action au clic
+btn.onclick = function() {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: 'smooth' // Remontée fluide
   });
-}
+};
 
