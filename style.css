@@ -169,6 +169,22 @@ vertical-align: middle;
     font-size: 1.1rem;
     color: #555;
 }
+/* Ajoute ceci à ton CSS existant */
+.counter-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: baseline; /* Aligne le bas du texte */
+    gap: 2px;
+}
+
+.plus {
+    font-size: 2rem; /* Légèrement plus petit que le H2 */
+    font-weight: bold;
+    color: #000; /* Ou la couleur de tes chiffres */
+}
+
+
+
 
 /* --- Passage au mode Ordinateur --- */
 @media (min-width: 768px) {
